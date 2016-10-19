@@ -24,6 +24,9 @@ public class Liability {
     @Column(nullable = false)
     boolean isAccountedFor;
 
+    @ManyToOne
+    User users;
+
     public Liability() {
     }
 
@@ -38,6 +41,16 @@ public class Liability {
         this.firstName = firstName;
         this.lastName = lastName;
         this.isAccountedFor = isAccountedFor;
+    }
+
+
+    public Liability(String identifier, String firstName, String lastName, boolean isAccountedFor, User users) {
+        this.identifier = identifier;
+        this.firstName = firstName;
+        this.lastName = lastName;
+
+        this.isAccountedFor = isAccountedFor;
+        this.users = users;
     }
 
     public int getId() {
@@ -78,5 +91,13 @@ public class Liability {
 
     public void setAccountedFor(boolean accountedFor) {
         isAccountedFor = accountedFor;
+    }
+
+    public User getUsers() {
+        return users;
+    }
+
+    public void setUsers(User users) {
+        this.users = users;
     }
 }
