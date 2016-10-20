@@ -1,0 +1,19 @@
+{
+  "name": "angularjs",
+  "version": "0.3.5",
+  "main": "./lib/angularjs",
+  "description": "An AngularJS package for Atom",
+  "keywords": [
+    "angular",
+    "angularjs",
+    "javascript",
+    "frontend"
+  ],
+  "repository": "https://github.com/angular-ui/AngularJS-Atom",
+  "readmeFilename": "README.md",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  },
+  "dependencies": {}
+}
