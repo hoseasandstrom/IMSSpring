@@ -1,7 +1,7 @@
 {
   "name": "imsspring",
   "version": "1.0.0",
-  "description": "",
+  "description": "Incident Management System for Schools",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,6 +17,13 @@
   },
   "homepage": "https://github.com/hoseasandstrom/IMSSpring#readme",
   "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-minify": "0.0.14",
+    "gulp-sass": "^2.3.2",
+    "gulp-watch": "^4.3.10"
+  },
+  "dependencies": {
     "gulp": "^3.9.1",
     "gulp-browserify": "^0.5.1",
     "gulp-minify": "0.0.14",

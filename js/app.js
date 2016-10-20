@@ -12,9 +12,10 @@ app.config(['$routeProvider', function($routeProvider){
   $routeProvider
   .when('/login', {
       controller: 'loginController',
-      templateUrl: 'templates/logIn.html',
+      templateUrl: 'templates/login.html',
     })
   .when('/registration', {
       controller: 'loginController',
       templateUrl: 'templates/registration.html',
     })
+}])

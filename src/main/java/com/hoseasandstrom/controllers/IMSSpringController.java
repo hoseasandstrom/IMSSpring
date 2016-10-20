@@ -1,7 +1,6 @@
 package com.hoseasandstrom.controllers;
 
 import com.hoseasandstrom.entities.User;
-import com.hoseasandstrom.services.LiabilityRepository;
 import com.hoseasandstrom.services.UserRepository;
 import com.hoseasandstrom.utils.PasswordStorage;
 import org.h2.tools.Server;
@@ -13,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
@@ -23,11 +23,14 @@ public class IMSSpringController {
     @Autowired
     UserRepository users;
 
-    @Autowired
-    LiabilityRepository liabilities;
+   // @Autowired
+   // LiabilityRepository liabilities;
+
+    public IMSSpringController() throws FileNotFoundException {
+    }
 
     public void init() throws Exception {
-        Server.createWebServer().start();
+        Server.createWebServer("-webPort", "5760").start();
     }
 
     @RequestMapping(path = "/login", method = RequestMethod.POST)
@@ -55,6 +58,11 @@ public class IMSSpringController {
             users.save(regi);
             session.setAttribute("username", user.getUsername());
         }
+    }
+
+    @RequestMapping(path="/users", method = RequestMethod.GET)
+    public Iterable<User> getUsers () {
+        return users.findAll();
     }
 
 
